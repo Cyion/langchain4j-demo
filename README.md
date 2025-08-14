@@ -24,7 +24,7 @@ To run this project, you will need:
 
 ## Project Setup
 
-Follow the steps below to get started with the Spring-AI Demo Project:
+Follow the steps below to get started with the LangChain4j Demo Project:
 
 ### 1. Clone the Repository
 
