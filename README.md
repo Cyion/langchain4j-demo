@@ -46,8 +46,12 @@ langchain4j.open-ai.embedding-model.api-key=YOUR_API_KEY_HERE
 
 ### 3. Build and Run the Project
 
-Use the following command to run the tests:
+Use the following commands to run the project:
 
 ```bash
-./mvnw test
+# Build the application
+./mvnw clean install
+
+# Run the application
+./mvnw springboot:run
 ```
