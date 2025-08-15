@@ -3,6 +3,9 @@ package de.bredex.langchain4j_demo.service;
 import dev.langchain4j.data.embedding.Embedding;
 import dev.langchain4j.data.image.Image;
 import dev.langchain4j.data.message.ChatMessage;
+import dev.langchain4j.data.message.ImageContent;
+import dev.langchain4j.data.message.TextContent;
+import dev.langchain4j.data.message.UserMessage;
 import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.chat.response.ChatResponse;
 import dev.langchain4j.model.embedding.EmbeddingModel;
@@ -29,6 +32,15 @@ public class AIService {
 
     public Image generate(String prompt) {
         return this.imageModel.generate(prompt).content();
+    }
+
+    public boolean catRecognizer(Image image) {
+        final ChatMessage prompt = UserMessage.from(
+                TextContent.from("Decide whether or not there is a cat in the image. If there is a cat in the image return 'true', otherwise 'false'"),
+                ImageContent.from(image)
+        );
+        final ChatResponse response = this.chatModel.chat(prompt);
+        return Boolean.parseBoolean(response.aiMessage().text());
     }
 
     public Embedding embedding(String text) {

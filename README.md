@@ -9,6 +9,7 @@ This project demonstrates how to use LangChain4j with OpenAI's API in a Spring B
 - ai assistants
 - image generation
 - image analysis
+- image classification
 - embeddings
 
 ---

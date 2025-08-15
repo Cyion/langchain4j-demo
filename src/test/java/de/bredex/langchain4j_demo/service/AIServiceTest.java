@@ -43,6 +43,13 @@ class AIServiceTest {
     }
     @Disabled
     @Test
+    void testCatRecognizer() {
+        final Image image = Image.builder().url("https://static.vecteezy.com/system/resources/previews/002/098/203/non_2x/silver-tabby-cat-sitting-on-green-background-free-photo.jpg").build();
+        final boolean containsCat = this.service.catRecognizer(image);
+        System.out.println(containsCat ? "Image shows a cat" : "Image shows not a cat");
+    }
+    @Disabled
+    @Test
     void testEmbedding() {
         final Embedding response = this.service.embedding("Hello AI!");
         System.out.printf("Embedding dimension: %d%nEmbedding: %s%n", response.dimension(), Arrays.toString(response.vector()));
